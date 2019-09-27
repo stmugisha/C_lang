@@ -1,6 +1,6 @@
 //Author: Stephen Mugisha
 
-//further_reading: The C programming language by Ritchie Kernighern
+//reference: The C programming language by Ritchie Kernighern
 
 #include <stdio.h>
 /*
@@ -26,10 +26,6 @@ float main()
 
 /*
 Notes:
-if you choose to use int dtype, (5/9)*(fahrenheit-32) returns all celsius temps as 0 
-because integer division truncates in C.
-try it out yourself by changing float to int, ommit the .0 after figures and see the discrepancy
-
 %3.0f and %6.1f specify return 3 chars and no decimal place(dpl) and 6 chars rounded to 1 dpl
 respectively
 */
