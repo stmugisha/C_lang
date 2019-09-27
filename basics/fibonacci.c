@@ -1,5 +1,8 @@
 // Author: Stephen Mugisha
 
+// Recursion is a programming technique where a function calls itself
+// Below is an example of a recursive program that computes the fibonacci numbers
+
 #include <stdio.h>
 
 int fibonacci(int num){
@@ -22,6 +25,6 @@ int main(){
     printf("Enter any positon of a fibonacci number:\n");
     scanf("%d", &n); //reading user input
 
-    printf("The fibonacci of %d is: \t %d \t", n, fibonacci(n));
+    printf("The fibonacci of %d is: \t %d \t\n", n, fibonacci(n));
 
 }
