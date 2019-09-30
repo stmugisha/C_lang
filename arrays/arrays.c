@@ -1,3 +1,5 @@
+/*Author:  Stephen Mugisha*/
+
 /* The array data structure */
 #include <stdio.h>
 
