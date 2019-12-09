@@ -1,3 +1,3 @@
 ## C_lang
 
-Exploring computer science and programming through the C programming language.
+Exploring programming through the C programming language.
