@@ -9,8 +9,8 @@ int main()
     int i;
     unsigned int seed;
     int face;
-    
-    printf("Enter seed(An integer number): ");
+
+    printf("Enter seed (An integer number): ");
     scanf("%u", &seed);
 
     srand(seed); //seed random-num-generator
