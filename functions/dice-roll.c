@@ -3,6 +3,7 @@ The program below 'rolls' a dice thrice. */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
@@ -10,10 +11,12 @@ int main()
     unsigned int seed;
     int face;
 
-    printf("Enter seed (An integer number): ");
+    printf("Enter seed (An integer): ");
     scanf("%u", &seed);
 
-    srand(seed); //seed random-num-generator
+    srand(seed); /* seed random-num-generator */
+
+    //srand(time(NULL)); /* clock-controlled RNG */
 
     for(i=1; i<=3; i++)
     {
