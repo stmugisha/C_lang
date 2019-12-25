@@ -7,9 +7,18 @@ The program below 'rolls' a dice thrice. */
 int main()
 {
     int i;
+    unsigned int seed;
+    int face;
+    
+    printf("Enter seed(An integer number): ");
+    scanf("%u", &seed);
+
+    srand(seed); //seed random-num-generator
+
     for(i=1; i<=3; i++)
     {
-        printf("%d", 1+rand()%6);
+        face = 1 + (rand()%6);
+        printf("Outcome: %d\n", face);
     }
     return 0;
 }
