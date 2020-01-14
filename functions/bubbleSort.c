@@ -41,7 +41,7 @@ void bubbleSort(int array[], int size)
     int i;      // comparison counter
     int holder; // temporary swap location
 
-    for(pass=1; pass < size; ++pass)
+    for(pass=1; pass < size-1; ++pass)
     {
         for(i=0; i < size-1; ++i)
         {
