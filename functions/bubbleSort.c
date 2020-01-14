@@ -7,7 +7,7 @@ The bubble sort algorithm
 #include <stdio.h>
 #define SIZE 7
 
-void bubbleSort(int array[], int size);
+void bubbleSort(int *const array, const int size);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
     return 0;
 }
 
-void bubbleSort(int array[], int size)
+void bubbleSort(int *const array, const int size)
 {
     int pass;   // num. of passes through the array
     int i;      // comparison counter
