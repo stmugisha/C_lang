@@ -7,7 +7,9 @@ The bubble sort algorithm
 #include <stdio.h>
 #define SIZE 7
 
-void bubbleSort(int *const array, const int size);
+void bubbleSort(int *const array, const int size, int(*compare)(int a, int b));
+int ascending(int a, int b);
+int descending(int a, int b);
 
 int main()
 {
@@ -23,9 +25,9 @@ int main()
     printf("\n");
 
     /* sorting the array */
-    bubbleSort(odd, SIZE);
+    bubbleSort(odd, SIZE, ascending);
 
-    printf("Array after sorting:\n");
+    printf("Array after sorting (ascending order):\n");
 
     for(counter=0; counter<SIZE; ++counter)
     {
@@ -35,7 +37,7 @@ int main()
     return 0;
 }
 
-void bubbleSort(int *const array, const int size)
+void bubbleSort(int *const array, const int size, int(*compare)(int a, int b))
 {
     int pass;   // num. of passes through the array
     int i;      // comparison counter
@@ -45,7 +47,8 @@ void bubbleSort(int *const array, const int size)
     {
         for(i=0; i < size-1; ++i)
         {
-            if(array[i] > array[i+1])
+            if((*compare)(array[i], array[i + 1]))
+            //if(array[i] > array[i + 1])
             {
                 holder = array[i];
                 array[i] = array[i+1];
@@ -53,4 +56,14 @@ void bubbleSort(int *const array, const int size)
             }
         }
     }
+}
+
+int ascending(int a, int b)
+{
+    return a > b;
+}
+
+int descending(int a, int b)
+{
+    return b > a;
 }
