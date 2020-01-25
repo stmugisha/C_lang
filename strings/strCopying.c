@@ -1,4 +1,4 @@
-/* Creating a copy of a string */
+/* Creating a copy of a string from scratch */
 
 #include <stdio.h>
 #define SIZE 17
