@@ -4,13 +4,16 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#define SIZE 18
 
 void toUppercase(char *sPtr);
 
 int main()
 {
-    char string[] = "Agent of Shield..";
-    printf("Input string:\n%s\n", string);
+    char string[SIZE];
+    printf("Input string:\n");
+    fgets(string, SIZE, stdin);
+    printf("unformatted string:\n%s\n", string);
     toUppercase(string);
     printf("Formatted string:\n%s\n", string);
 
