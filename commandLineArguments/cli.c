@@ -1,3 +1,6 @@
+// Command Line Arguments
+// A program that return the input arguments
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
@@ -17,3 +20,7 @@ int main(int argc, char *argv[])
     }
     return 0;    
 }
+
+// Usage:
+// after compilation, run your compiled file "./a.out" for instance,
+// then supply any number of arguments. e.g. ./a.out 1 2 3 4
