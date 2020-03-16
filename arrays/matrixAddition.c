@@ -1,8 +1,7 @@
 //Author: Stephen Mugisha
 
-/*
-Addition of two 2x2 matrices
-*/
+// Addition of two 2x2 matrices
+
 
 #include <stdio.h>
 #define m 2
