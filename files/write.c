@@ -15,6 +15,7 @@ int main()
     filePtr = fopen("words.txt", "w");
 
     write(word, filePtr);
+    //fwrite(word, filePtr);
 
     filePtr = fopen("words.txt","r");
     read(word, filePtr);

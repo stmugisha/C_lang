@@ -1,4 +1,0 @@
-Final
-Test of whether this modularization
-has been a success and has no bugs
-Let's see what we have.
