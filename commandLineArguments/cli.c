@@ -1,5 +1,7 @@
 // Command Line Arguments
-// A program that return the input arguments
+
+/* Author: Stephen Mugisha */
+// A program that prints the input arguments to screen
 
 #include <stdio.h>
 
@@ -9,7 +11,7 @@ int main(int argc, char *argv[])
     if(argc >= 2)
     {
         printf("Input arguments: \n");
-        for(i=1; i < argc;++i)
+        for(i=1; i < argc; ++i)
         {
             printf("%s\n", argv[i]);
         }
