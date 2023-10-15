@@ -1,8 +1,8 @@
 # compile the cpp files
 
 # Compiler and compilation flags
-CXX = clang++
-CXXFLAGS = -std=c++1y -stdlib=libc++ -O0 -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -MMD -MP -g
+CC = clang++
+CCFLAGS = -std=c++1y -stdlib=libc++ -O0 -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -MMD -MP -g
 
 #clang++: Calls the clang C++ compiler.
 #-std=c++1y: Specifies the C++ standard to use (in this case, C++14).
@@ -18,36 +18,18 @@ CXXFLAGS = -std=c++1y -stdlib=libc++ -O0 -pedantic -Wall -Werror -Wfatal-errors 
 #-g: Generates debugging information.
 #-c: Compiles the source files without linking them.
 
-# Directories
-SRC_DIR = ./
 OBJ_DIR = .objs
+SRC_DIR = ./
+#:= expands curdir immediately as opposed to = w/c creates a recursive var that's expanded each time it's referenced
 
-# Source files
-SRCS = $(wildcard $(SRC_DIR)/*.cc) # the wildcard function is used to search for files or file patterns that match a specific criteria. 
-
-OBJS = $(patsubst $(SRC_DIR)/%.cc,$(OBJ_DIR)/%.o,$(SRCS)) 
-# the patsubst function is used to generate a list of object files ($(OBJ_DIR)/%.o)  from a list of source files
-# ($(SRC_DIR)/%.cc) by replacing the source directory ($(SRC_DIR)) with the object directory ($(OBJ_DIR)).
-DEPS = $(OBJS:.o=.d) # generates a list of dependency files corresponding to the object files.
-
-# Targets
 TARGET = main
+DEPS = $(wildcard $(SRC_DIR)/*.cc)
 
-# Rule to build the executable
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+all: $(TARGET)
 
-# Rule to build object files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc | $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(TARGET): $(DEPS) # $^: repr. all prerequisite files while $@ repr. the target file
+	$(CC) $(CCFLAGS) $^ -o $@ 
 
-# Rule to create the object directory
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-# Clean up
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET)
+	rm -r $(TARGET).dSYM $(TARGET).d
 
-# Include dependencies
--include $(DEPS)
